@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Panther AI | The AI Character</title>
+    <link rel="icon" type="image/x-icon" href="Untitled design (1).png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Syncopate:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <audio id="boot-sound" src="startup.mp3" preload="auto"></audio>
+
+<audio id="welcome-voice" src="welcome.mp3" preload="auto"></audio>
+<audio id="bg-music" src="bg-music.mp3" loop preload="auto"></audio>
+<div id="music-control" class="music-btn">
+    <i id="music-icon" class="fas fa-volume-up"></i>
+</div>
+
+    <div id="loader">
+        <div class="glitch-text" data-text="SYSTEM BOOTING...">SYSTEM BOOTING...</div>
+        <div id="load-percentage">0%</div>
+        <button id="start-system-btn" style="display: none;" class="neon-btn">ENTER SYSTEM</button>
+    </div>
+
+    <canvas id="bg-canvas"></canvas>
+    <div class="custom-cursor"><i class="fas fa-paw"></i></div>
+
+<section class="hero">
+    <div class="hero-content">
+        
+        <div class="neon-logo-background">
+            <img src="logo.svg" alt="Panther Neon Logo" class="hero-svg">
+        </div>
+            <svg class="panther-outline-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+                <path class="st0" d="M250,68.2c-26.6,0-48.2,21.6-48.2,48.2c0,8.8,2.4,17.1,6.6,24.2c-35.7,14.2-60.9,48.8-60.9,89.4
+                    c0,16.1,4,31.3,11.1,44.6c-22.9,15.1-37.9,40.8-37.9,70.1c0,47.2,38.3,85.5,85.5,85.5c26.6,0,50.4-12.2,66.3-31.4
+                    c15.9,19.2,39.7,31.4,66.3,31.4c47.2,0,85.5-38.3,85.5-85.5c0-29.3-15.1-55-37.9-70.1c7.1-13.3,11.1-28.5,11.1-44.6
+                    c0-40.6-25.2-75.2-60.9-89.4c4.2-7.1,6.6-15.4,6.6-24.2C348.2,89.8,326.6,68.2,250,68.2z M250,116.4c0,0,28.9-14.5,57.9,14.5
+                    s28.9,57.9,0,86.8s-57.9,14.5-57.9,14.5s-28.9-14.5-57.9-14.5s-28.9-57.9,0-86.8S250,116.4,250,116.4z M182.5,232.2
+                    c14.5,0,28.9,14.5,28.9,28.9s-14.5,28.9-28.9,28.9s-28.9-14.5-28.9-28.9S168,232.2,182.5,232.2z M317.5,232.2
+                    c14.5,0,28.9,14.5,28.9,28.9s-14.5,28.9-28.9,28.9s-28.9-14.5-28.9-28.9S303,232.2,317.5,232.2z M250,309.4
+                    c28.9,0,57.9,14.5,57.9,43.4c0,14.5-14.5,28.9-28.9,28.9s-28.9-14.5-28.9-28.9c0-14.5-14.5-14.5-14.5-14.5s-14.5,0-14.5,14.5
+                    c0,14.5-14.5,28.9-28.9,28.9s-28.9-14.5-28.9-28.9C192.1,323.9,221.1,309.4,250,309.4z"/>
+            </svg>
+        </div>
+
+        <h1 id="hero-title">BLACK PANTHER AI</h1>
+        <p class="tagline">"The Silent Guardian of the Digital Era"</p>
+        
+        <div class="scroll-down">EXPLORE SYSTEM <i class="fas fa-arrow-down"></i></div>
+    </div>
+</section>
+
+    <section class="origin-story section-padding">
+        <div class="container">
+            <h2 class="section-header reveal">සම්භවය සහ ඉතිහාසය (ORIGIN STORY)</h2>
+            <div class="origin-grid">
+                <div class="origin-image reveal">
+                    <div class="image-frame">
+                        <img src="Whisk_zuzmge0oty.jpg" alt="Black Panther AI Origin">
+                        <div class="scan-line"></div>
+                    </div>
+                </div>
+                <div class="origin-text reveal">
+                    <h3>ඩිජිටල් යුගයේ ආරක්ෂකයා</h3>
+                    <p>Black Panther AI යනු වසර ගණනාවක පර්යේෂණ වල ප්‍රතිඵලයකි. දත්ත සොරකම් කරන Cyber වැරදිකරුවන්ගෙන්
+                        ඩිජිටල් ලෝකය ආරක්ෂා කිරීමට, රහසිගත Vibranium තාක්ෂණය පදනම් කරගෙන මොහු නිර්මාණය කරන ලදී.</p>
+                    <ul class="origin-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Purpose:</strong> Data Protection & IT Guidance</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Creator:</strong> Anonymous Tech Council</li>
+                        <br>
+                        <li><i class="fas fa-check-circle"></i> <strong>Location:</strong> Encrypted Cyber Vault</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="profile-stats section-padding">
+        <div class="container">
+            <div class="profile-layout">
+                <div class="char-card reveal">
+                    <div class="card-inner">
+                        <div class="char-avatar">
+                            <img src="Image_fx (3).jpg" alt="Black Panther Profile">
+                        </div>
+                        <div class="char-info">
+                            <h3>BLACK PANTHER AI</h3>
+                            <p class="status">STATUS: <span class="online">ONLINE</span></p>
+                            <div class="data-row"><span>ID:</span><span>BP-9082</span></div>
+                            <div class="data-row"><span>CLASS:</span><span>ELITE GUARDIAN</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ability-container reveal">
+                    <h3 class="ability-title">SYSTEM ABILITIES</h3>
+                    <br>
+                    <br>
+                    <div class="ability">
+                        <div class="ability">
+                            <div class="ability-info">
+                                <span class="ability-name">INTELLIGENCE</span>
+                                <span class="ability-value">98%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" data-width="98%"></div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="ability">
+                            <div class="ability-info">
+                                <span class="ability-name">STEALTH</span>
+                                <span class="ability-value">98%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" data-width="98%"></div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="ability">
+                            <div class="ability-info">
+                                <span class="ability-name">COMBAT READY</span>
+                                <span class="ability-value">95%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" data-width="98%"></div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="ability">
+                            <div class="ability-info">
+                                <span class="ability-name">PROCESSING</span>
+                                <span class="ability-value">95%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" data-width="98%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="stats section-padding">
+        <div class="container">
+            <h2 class="section-header reveal">බලයන් සහ හැකියාවන් (ABILITIES)</h2>
+            <div class="ability-grid">
+                <div class="ability reveal">
+                    <div class="ability-info"><span>INTELLIGENCE</span><span>98%</span></div>
+                    <div class="bar">
+                        <div class="fill" data-width="98%"></div>
+                    </div>
+                </div>
+                <div class="ability reveal">
+                    <div class="ability-info"><span>PROCESSING SPEED</span><span>95%</span></div>
+                    <div class="bar">
+                        <div class="fill" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="ability reveal">
+                    <div class="ability-info"><span>SECURITY STRENGTH</span><span>90%</span></div>
+                    <div class="bar">
+                        <div class="fill" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="ability reveal">
+                    <div class="ability-info"><span>STEALTH</span><span>100%</span></div>
+                    <div class="bar">
+                        <div class="fill" data-width="100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="gallery section-padding">
+    <div class="container">
+        <h2 class="section-header reveal">ගැලරිය (SHOWROOM)</h2>
+
+        <div class="gallery-grid">
+            
+            <div class="video-card">
+                <div class="thumbnail-container">
+                    <img src="chritmas.jpeg" alt="Merry Christmas 🎅🎄" class="thumbnail">
+                    <div class="overlay">
+                        <a href="https://www.tiktok.com/@blackpanthai.lk/video/7587641474649443592" target="_blank" class="play-btn">
+                            <span class="icon">▶</span> WATCH LOG
+                        </a>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Merry Christmas 🎅🎄</h3>
+                    <p>Status: Completed</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="thumbnail-container">
+                    <img src="myss.png" alt="Mission 02" class="thumbnail">
+                    <div class="overlay">
+                        <a href="https://www.tiktok.com/@blackpanthai.lk/video/7544626413286984961" target="_blank" class="play-btn">
+                            <span class="icon">▶</span> WATCH LOG
+                        </a>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>MISSION: STEALTH MODE</h3>
+                    <p>Status: Archived</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="thumbnail-container">
+                    <img src="Screenshot 2025-12-27 013503.png" alt="Capcut pro free 😱😎" class="thumbnail">
+                    <div class="overlay">
+                        <a href="https://www.tiktok.com/@blackpanthai.lk/video/7565363316168592641?is_from_webapp=1&sender_device=pc&web_id=7573615398067734036" target="_blank" class="play-btn">
+                            <span class="icon">▶</span> WATCH LOG
+                        </a>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Capcut pro free 😱😎</h3>
+                    <p>Status: Completed</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="thumbnail-container">
+                    <img src="Gemini_Generated_Image_n2vwzqn2vwzqn2vw.png" alt="selfi video and image genaration" class="thumbnail">
+                    <div class="overlay">
+                        <a href="https://www.tiktok.com/@blackpanthai.lk/video/7587866029750078736?is_from_webapp=1&sender_device=pc&web_id=7573615398067734036" target="_blank" class="play-btn">
+                            <span class="icon">▶</span> WATCH LOG
+                        </a>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>selfi video and image genaration</h3>
+                    <p>Status: Archived</p>
+                </div>
+            </div>
+
+        </div>
+                <a href="https://www.tiktok.com/@blackpanthai.lk" target="_blank" class="more-missions-btn">
+        <span class="btn-glitch">SEE MORE Video</span>
+        <i class="fas fa-external-link-alt"></i>
+    </a>
+     </div> </section>
+
+    <section class="contact section-padding">
+
+        <div class="container">
+            <h2 class="section-header reveal">සංකේතනය කළ පණිවිඩයක් යවන්න (ENCRYPTED MESSAGE)</h2>
+            <div class="contact-frame reveal">
+                <form id="encryption-form">
+                    <div class="input-group">
+                        <label>SENDER_ID</label>
+                        <input type="text" placeholder="ඔබේ නම ඇතුළත් කරන්න..." required>
+                    </div>
+                    <div class="input-group">
+                        <label>ACCESS_KEY (EMAIL)</label>
+                        <input type="email" placeholder="ඔබේ ඊමේල් ලිපිනය..." required>
+                    </div>
+                    <div class="input-group">
+                        <label>SECURE_DATA (MESSAGE)</label>
+                        <textarea rows="5" placeholder="ඔබේ රහස්‍ය පණිවිඩය මෙතැන ටයිප් කරන්න..."></textarea>
+                    </div>
+                    <button type="submit" class="neon-btn">
+                        <span class="btn-text">TRANSMIT DATA</span>
+                        <span class="btn-glow"></span>
+                    </button>
+                </form>
+                <div id="transmission-status"></div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <div class="terminal-title">BP_SYSTEM_LOGS</div>
+        </div>
+        <div class="terminal-body" id="terminal-output">
+            <span class="command-prefix">root@black_panther_ai:~#</span> <span id="typewriter"></span>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

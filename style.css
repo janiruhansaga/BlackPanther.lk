@@ -1,0 +1,1114 @@
+/* --- මූලික සැකසුම් (Base Settings) --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Syncopate:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+    /* පද්ධතියේ සාමාන්‍ය මවුසය ඉවත් කිරීම */
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1.6;
+    cursor: none;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative !important;
+}
+
+/* --- Three.js Background Canvas --- */
+#bg-canvas {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100% !important;
+        height: 100% !important;
+        position: fixed !important;
+        left: 0 !important;
+        top: 0 !important;
+        z-index: -1
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Custom Cursor එකේ පෙනුම */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    color: #00ff00; /* නියොන් කොළ පාට */
+    font-size: 25px;
+    pointer-events: none;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+/* --- System Loader (Booting Screen) --- */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glitch-text {
+    font-size: 1.5rem;
+    letter-spacing: 10px;
+    color: #fff;
+    animation: glitch 1.5s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        opacity: 1;
+        transform: skew(0deg);
+    }
+
+    20% {
+        opacity: 0.8;
+        transform: skew(2deg);
+    }
+
+    40% {
+        opacity: 1;
+        transform: skew(-2deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: skew(0deg);
+    }
+}
+
+/* --- 1. Hero Section --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, transparent, #000 85%);
+}
+
+#hero-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(2rem, 10vw, 5rem);
+    letter-spacing: 15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #888;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+/* --- 2. Origin Story Section --- */
+.section-header {
+    font-size: 1.5rem;
+    letter-spacing: 8px;
+    margin-bottom: 60px;
+    border-left: 5px solid #fff;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+.origin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.image-frame {
+    position: relative;
+    border: 1px solid #333;
+    overflow: hidden;
+    background: #050505;
+}
+
+.image-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.7) grayscale(0.5);
+    transition: 0.5s ease;
+}
+
+.image-frame:hover img {
+    filter: brightness(1) grayscale(0);
+    transform: scale(1.05);
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 10px #fff;
+    animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+.origin-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.origin-text p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.origin-list {
+    list-style: none;
+}
+
+.origin-list li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.origin-list i {
+    color: #fff;
+    margin-right: 10px;
+}
+
+/* --- 3. Profile & Ability Bars --- */
+.profile-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 30px;
+}
+
+.char-card {
+    background: #080808;
+    border: 1px solid #222;
+    padding: 30px;
+    border-top: 5px solid #fff;
+    text-align: center;
+}
+
+.char-avatar img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+}
+
+.char-info h3 {
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.status {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.online {
+    color: #0f0;
+    text-shadow: 0 0 8px #0f0;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #111;
+}
+
+.ability-info {
+    display: flex;
+    /* Flexbox සක්‍රීය කරයි */
+    justify-content: space-between;
+    /* අකුරු සහ ප්‍රතිශතය දෙපසට තල්ලු කරයි */
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+    /* ඔබට අවශ්‍ය පරිදි ප්‍රමාණය වෙනස් කරන්න */
+    color: #fff;
+}
+
+.ability-name {
+    text-align: left;
+}
+
+.ability-value {
+    text-align: right;
+    color: #888;
+    /* ප්‍රතිශතයේ වර්ණය මඳක් අඩු කිරීමට */
+}
+
+/* බාර් එකෙහි මූලික සැකසුම */
+.bar-bg {
+    width: 100%;
+    height: 4px;
+    background: #111;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar-fill, .fill {
+    width: 0%; 
+    height: 100%;
+    background: #00ff00;
+    box-shadow: 0 0 15px #00ff00;
+    transition: none; /* GSAP වලින් පාලනය කරන නිසා transition අයින් කරන්න */
+}
+/* ලයින් එකේ පසුබිම (කළු පැහැති තීරුව) */
+.bar-bg,
+.bar {
+    width: 100%;
+    height: 4px;
+    /* උස මඳක් වැඩි කරන්න */
+    background: #111;
+    /* තද කළු */
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* පිරවෙන සුදු පැහැති ලයින් එක */
+.bar-fill,
+.fill {
+    height: 100%;
+    width: 0;
+    /* මුලින් බිංදුව විය යුතුය */
+    background: #fff;
+    /* සුදු පැහැය */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    /* Glow effect එක */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Gallery Grid සැකසුම */
+/* --- GALLERY LAYOUT FIX --- */
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* Card wrapper */
+.grid-item {
+    width: 100%;
+    background: #050505;
+    border: 1px solid #222;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* AUTO detect aspect ratio (No forced stretching) */
+.grid-item img,
+.grid-item video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Remove forced portrait lock */
+.grid-item {
+    aspect-ratio: auto;
+}
+
+/* Hover effects */
+.grid-item img,
+.grid-item video {
+    filter: grayscale(.7) brightness(.7);
+    transition: .4s;
+}
+
+.grid-item:hover img,
+.grid-item:hover video {
+    filter: grayscale(0) brightness(1);
+    transform: scale(1.03);
+}
+
+/* Video Overlay Label */
+.video-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: .6;
+}
+
+/* Tablet වලදී (Screen එක පොඩි වෙද්දී) පේළියට 2ක් පේන්න */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* Phone එකේදී පේළියට 1ක් පේන්න */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* Thumbnail එකේ උස පොඩ්ඩක් අඩු කරමු 4ක් දාන නිසා */
+.thumbnail-container {
+    position: relative;
+    width: 100%;
+    height: 350px; /* උස මෙතනින් adjust කරන්න */
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    /* ටර්මිනල් එකේ මුළු පළල සහ ඉඩ වෙනස් කිරීම */
+    .terminal-container {
+        width: 95% !important; /* දෙපැත්තෙන් පොඩි ඉඩක් තියන්න */
+        margin: 20px auto !important;
+        min-height: 150px !important; /* උස පොඩ්ඩක් අඩු කරන්න */
+        padding: 10px !important;
+    }
+
+    /* ටර්මිනල් එකේ අකුරු පොඩි කිරීම */
+    .terminal-body {
+        font-size: 0.8rem !important; /* අකුරු ප්‍රමාණය අඩු කරන්න */
+        line-height: 1.4 !important;
+    }
+
+    /* කමාන්ඩ් ප්‍රෙෆික්ස් එක (root@black_panther...) */
+    .command-prefix {
+        font-size: 0.75rem !important;
+        display: block; /* මොබයිල් එකේදී පේළියක් විදිහට පෙන්වන්න */
+        margin-bottom: 5px;
+    }
+
+    /* ටර්මිනල් එකේ උඩ තියෙන බටන් (Red, Yellow, Green) පොඩි කිරීම */
+    .terminal-header {
+        padding: 5px 10px !important;
+    }
+    
+    .dot {
+        width: 8px !important;
+        height: 8px !important;
+    }
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.terminal-title {
+    margin-left: 15px;
+    font-size: 10px;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.terminal-body {
+    padding: 15px;
+    font-size: 12px;
+    color: #0f0;
+    /* සම්භාව්‍ය හරිත වර්ණය */
+    min-height: 80px;
+    line-height: 1.5;
+}
+
+.command-prefix {
+    color: #fff;
+    margin-right: 5px;
+}
+
+/* Cursor බ්ලින්ක් වීම */
+#typewriter::after {
+    content: "|";
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+
+
+/* CONTACT FORM STYLES */
+.contact-frame {
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid #222;
+    padding: 40px;
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    background: #050505;
+    border: 1px solid #222;
+    padding: 12px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Futuristic Neon Button */
+.neon-btn {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 5px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.neon-btn:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 30px #fff;
+}
+
+#transmission-status {
+    margin-top: 20px;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.unmute-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    /* මෙහිදී cursor: pointer භාවිතා කළ හැක්කේ බොත්තමට පමණි */
+    pointer-events: all;
+    transition: 0.3s;
+}
+
+.unmute-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.unmute-btn i {
+    font-size: 14px;
+}
+
+.video-control-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .4);
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+    z-index: 10;
+}
+
+.video-control-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.video-control-btn i {
+    font-size: 14px;
+}
+
+#profile-3d-container {
+    width: 100%;
+    height: 450px;
+    /* අවශ්‍ය නම් උස තවත් වැඩි කරන්න */
+    background: transparent;
+    /* පසුබිම ඉවත් කරන ලදී */
+    position: relative;
+    overflow: hidden;
+}
+
+#profile-3d-canvas {
+    width: 100% !important;
+    height: 100% !important;
+    outline: none;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+
+canvas#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none;
+    z-index: -1;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+
+/* FULLSCREEN hero — no top spacing */
+.hero {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+/* container default spacing remove at top */
+.section-padding:first-of-type {
+    padding-top: 0 !important;
+}
+.tiktok-embed-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transform: scale(1.05); /* වීඩියෝව මඳක් විශාල කර අයිකන වැසීමට */
+    display: block;
+}
+
+/* Gallery Grid එක නිවැරදි කිරීම */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+/* වීඩියෝ රාමුව සිරස් අතට (Portrait) තබා ගැනීම */
+.video-portrait {
+    aspect-ratio: 9 / 16;
+    width: 100%;
+    max-width: 350px; /* ඔබට අවශ්‍ය ප්‍රමාණයට වෙනස් කරන්න */
+    background: #000;
+    position: relative;
+    overflow: hidden; /* මෙයින් පිටතට යන අනවශ්‍ය කොටස් වැසේ */
+    border: 1px solid #222;
+}
+/* TikTok Interface එක මඳක් මකා දමා වීඩියෝව පෙන්වීමට */
+.tiktok-wrapper {
+    position: absolute;
+    top: -50px; /* උඩින් ඇති TikTok ලෝගෝව මඟ හැරීමට */
+    left: 0;
+    width: 100%;
+    height: calc(100% + 100px); /* පහළ ඇති කොටස් මඟ හැරීමට උස වැඩි කිරීම */
+}
+:root {
+    --neon-green: #00ff00;
+    --dark-bg: #0a0a0a;
+    --card-bg: #111;
+}
+
+.mission-gallery {
+    padding: 60px 20px;
+    background: var(--dark-bg);
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+}
+
+.glitch-text {
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px var(--neon-green);
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid !important;
+    /* හරියටම පංගු 4කට බෙදන්න (Desktop එකේදී) */
+    grid-template-columns: repeat(4, 1fr) !important; 
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px; /* මේක ඔයාගේ සයිට් එකේ හැටියට 1400px වගේ කරන්නත් පුළුවන් */
+    margin-bottom: 5px !important; /* මේක අඩු කරාම ගැලරිය සහ බටන් එක තවත් ලං වෙනවා */
+}
+
+.video-card {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail-container {
+    width: 100%;
+    aspect-ratio: 9 / 14; /* TikTok හැඩය */
+    overflow: hidden;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* පින්තූරය ඇදෙන්නේ නැතිවෙන්න මේක අනිවාර්යයි */
+}
+
+/* Tablet සහ Phone වලදී පේළියට 4ක් දාන්න එපා, එතකොට හීනි වෙනවා වැඩියි */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.video-card:hover .thumbnail {
+    filter: grayscale(0%);
+    scale: 1.1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.video-card:hover .overlay {
+    opacity: 1;
+}
+
+.play-btn {
+    background: var(--neon-green);
+    color: #000;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.play-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.video-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.video-info h3 {
+    color: var(--neon-green);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.video-info p {
+    color: #888;
+    font-size: 0.8rem;
+    margin: 5px 0 0 0;
+}
+section {
+    display: block;
+    clear: both; /* කලින් තියෙන දේවල් එක්ක පැටලෙන්නේ නැති වෙන්න */
+    width: 100%;
+    margin-bottom: 50px; /* Section දෙක අතර පරතරය */
+}
+/* Gallery section එක බලෙන්ම ඉවර කරන්න */
+#gallery-section {
+    display: block !important;
+    position: relative !important;
+    height: auto !important;
+    overflow: hidden; /* මේක වැදගත් */
+    clear: both;
+    margin-bottom: 80px; /* Section දෙක අතර ඉඩ */
+}
+
+/* Message box එක බලෙන්ම පල්ලෙහාට ගන්න */
+.container {
+    display: block !important;
+    position: relative !important;
+    margin-top: 50px !important;
+    clear: both;
+}
+/* Hero Content එක relative කරන්න, එතකොට ඒක ඇතුලේ අනිත් ඒවා absolute කරන්න පුළුවන් */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Text එක උඩින් තියන්න */
+}
+
+/* Logo එක දාන පෙට්ටිය */
+.neon-logo-background {
+    display: flex;
+    justify-content: center; /* හරහට මැදට (Horizontal) */
+    align-items: center;     /* උඩ යටින් මැදට (Vertical) */
+    height: 400px;           /* පෙට්ටියේ උස අවශ්‍ය පරිදි වෙනස් කරන්න */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* හරියටම මැදට ගේනවා */
+    transform: translate(-50%, -60%); 
+    width: 80vw; /* Screen එකේ පළලින් 80% ක් */
+    max-width: 600px; /* ඒත් 600px වලට වඩා ලොකු වෙන්න එපා */
+    height: auto;
+    z-index: -1; /* වැදගත්ම දේ: මේක Text එකට පිටිපස්සට යවනවා */
+    opacity: 0.4; /* ටිකක් බොඳ කරලා පෙන්නනවා, නැත්නම් Text එක පැහැදිලි මදි වෙයි */
+    pointer-events: none; /* Mouse එකට අහු නොවෙන්න හදනවා */
+}
+
+/* SVG එකේ පාට සහ Neon Glow එක */
+.panther-outline-svg path {
+    fill: none; /* ඇතුලේ පාටක් නෑ */
+    stroke: #020c02; /* ඉරි වල පාට - Neon Green */
+    stroke-width: 5; /* ඉරි වල මහත */
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    
+    /* මෙන්න Neon Magic එක! CSS Filter වලින් Glow එකක් දෙනවා */
+    filter: drop-shadow(0 0 5px #00ff00) 
+            drop-shadow(0 0 15px #00ff00) 
+            drop-shadow(0 0 30px #00ff00);
+    
+    /* පොඩි ගැස්සෙන Animation එකක් */
+    animation: neonPulse 3s infinite alternate;
+}
+
+/* Neon එළිය අඩුවැඩි වෙන Animation එක */
+@keyframes neonPulse {
+    from {
+        filter: drop-shadow(0 0 5px #00ff00) 
+                drop-shadow(0 0 15px #00ff00) 
+                drop-shadow(0 0 30px #00ff00);
+        opacity: 0.4;
+    }
+    to {
+        filter: drop-shadow(0 0 10px #00ff00) 
+                drop-shadow(0 0 30px #00ff00) 
+                drop-shadow(0 0 60px #00ff00);
+        opacity: 0.7;
+    }
+}
+/* Hero එකේ තියෙන SVG එකට */
+.hero-svg {
+    width: 1000px; /* ඔයාට ඕන ප්‍රමාණයට වෙනස් කරන්න */
+    max-width: 1000px;   /* Desktop එකේදී උපරිම 1000px වෙන්න */
+    height: auto;        /* Height එක auto තියන්න */
+    opacity: 0.8;
+    opacity: 0.8; /* ටිකක් පාරදෘශ්‍ය කරන්න */
+    /* මෙන්න මේකෙන් තමයි කොළ පාට නියොන් එළිය එන්නේ */
+    filter: drop-shadow(0 0 10px #e4e005e1) drop-shadow(0 0 20px #ff4800);
+    animation: pulse 1s infinite alternate;
+}
+
+/* ගැස්සෙන Animation එකක් දාමු */
+@keyframes pulse {
+    from { transform: scale(1); opacity: 0.8; }
+    to { transform: scale(1.05); opacity: 0.8; }
+}
+.more-btn-container {
+    text-align: center;
+     margin-top: 5px !important; /* මේක කලින් 50px හෝ 60px තිබුණා නම් 20px වගේ කරන්න */
+    padding-top: 0 !important;
+}
+
+.more-missions-btn {
+display: inline-block; /* table වෙනුවට inline-block වඩා හොඳයි */
+    width: auto;           /* content එකේ හැටියට width එක ගන්න */
+    min-width: 200px;      /* අවශ්‍ය නම් විතරක් දාන්න */
+    margin: 20px auto;
+    padding: 15px 45px;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 45px;
+    background: transparent;
+    color: #056105;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.4s;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);           
+    justify-content: center;    /* හරහට මැදට (Center Horizontal) */
+    align-items: center;        /* උඩ යටින් මැදට (Center Vertical) */
+    width:  25% 50%;               /* මුළු පළලම ගන්න */
+    margin-top: 20px;          /* ගැලරියේ ඉඳන් පරතරය */
+    margin-bottom: 40px;       /* මැසේජ් බොක්ස් එකේ ඉඳන් පරතරය */
+    clear: both;               /* වෙනත් layouts එක්ක පැටලීම වැළැක්වීමට */
+}
+
+/* Hover කරද්දී වෙනස් වෙන විදිහ */
+.more-missions-btn:hover {
+    background: #00ff00;
+    color: #000;
+    box-shadow: 0 0 40px #00ff00;
+    transform: translateY(-5px);
+}
+
+/* බටන් එක ඇතුළේ තියෙන Icon එක */
+.more-missions-btn i {
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.more-missions-btn:hover i {
+    transform: rotate(45deg); /* Hover කරද්දී Icon එක පොඩ්ඩක් ඇල වෙනවා */
+}
+#load-percentage {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ff00;
+    font-size: 2rem;
+    margin-top: 15px;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    font-weight: bold;
+}
+.music-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;       /* දකුණු පැත්තේ තිබුණු right: 30px; වෙනුවට left: 30px; දැම්මා */
+    right: auto;      /* කලින් තිබුණ දකුණු පැත්තේ අගය අයින් කරන්න මේක දාන්න */
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ff00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    color: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+    transition: 0.3s;
+}
+
+.music-btn:hover {
+    box-shadow: 0 0 25px #00ff00;
+    transform: scale(1.1);
+}
+
+.music-btn i {
+    font-size: 1.2rem;
+}
+@media screen and (max-width: 768px) {
+    /* 1. ප්‍රධාන පරතරය සහ හෙඩර් එක හරිගැස්සීම */
+    .container {
+        width: 92% !important;
+        padding: 0 15px !important;
+    }
+
+    /* සිංහල අකුරු කැඩීම වැළැක්වීමට හෙඩර් එකේ ප්‍රමාණය අඩු කිරීම */
+    .section-header {
+        font-size: 1.4rem !important; /* අකුරු පොඩි කරාම පේළියට එනවා */
+        line-height: 1.6 !important;
+        text-align: center !important;
+        letter-spacing: 1px !important;
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* 2. Hero Section (උඩම කොටස) */
+    #hero-title {
+        font-size: 2.2rem !important;
+        letter-spacing: 2px !important;
+    }
+    
+    .tagline {
+        font-size: 0.9rem !important;
+    }
+
+    /* 3. Terminal එක මොබයිල් එකට සෙට් කිරීම */
+    .terminal-container {
+        width: 100% !important;
+        margin: 30px 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .terminal-body {
+padding: 15px;
+    font-size: 12px;
+    color: #0f0;
+    min-height: 80px;
+    line-height: 1.5;
+    word-break: break-all; /* දිග වචන තිබ්බොත් කඩලා පල්ලෙහාට ගන්න */
+    overflow-wrap: break-word;
+}
+
+    /* 4. Contact Form එක ලස්සන කිරීම */
+    .contact-frame {
+        padding: 20px !important;
+    }
+
+    .input-group input, .input-group textarea {
+        font-size: 16px !important; /* මොබයිල් කීබෝඩ් එකේදී සූම් වීම වළක්වයි */
+        width: 100% !important;
+    }
+
+    /* 5. Music Button එක පහළ වම් කොනට ලස්සනට තැබීම */
+    .music-btn {
+        bottom: 20px !important;
+        left: 20px !important;
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    /* 6. Grid Layouts පේළියට එක බැගින් හැදීම */
+    .origin-grid, .profile-layout, .ability-grid, .gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    /* 7. Custom Cursor එක මොබයිල් එකේදී අයින් කරන්නම ඕනේ */
+    .custom-cursor {
+        display: none !important;
+    }
+    body {
+        cursor: auto !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* 1. කැන්වස් එකේ විඩ්ත් එක හරිගස්සමු */
+    canvas#bg-canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* 2. නියොන් ලෝගෝ එක එළියට පැනීම වැළැක්වීම */
+    .neon-logo-background {
+        width: 95vw !important; /* මොබයිල් එකේදී විඩ්ත් එක ඇජස්ට් කරන්න */
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    /* 3. මුළු බොඩි එකේම එළියට පනින දේවල් හංගන්න */
+    html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+
+    /* 4. ඕනෑම රූපයක් හෝ වීඩියෝවක් සීමාවෙන් එළියට පැනීම වැළැක්වීම */
+    img, video, iframe {
+        max-width: 100% !important;
+        height: auto;
+    }
+}
